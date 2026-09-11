@@ -113,3 +113,33 @@ function formatCurrency(amount) {
 function getRoomById(id) {
   return ROOMS.find((room) => room.id === id);
 }
+
+function formatDateForWhatsApp(iso) {
+  if (!iso) return "Flexible";
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+}
+
+// Sensible fallback dates (tonight → tomorrow) for when no dates were
+// searched yet, so the WhatsApp message always shows something concrete.
+function defaultBookingDates() {
+  const toISO = (d) => d.toISOString().split("T")[0];
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  return { checkin: toISO(today), checkout: toISO(tomorrow) };
+}
+
+function buildWhatsAppLink(room, checkin, checkout, guests) {
+  const lines = [
+    `Hi ${SITE_CONFIG.fullName}! I'd like to book the *${room.name}* (${formatCurrency(room.price)}/night).`,
+    "",
+    `Check-in: ${formatDateForWhatsApp(checkin)}`,
+    `Check-out: ${formatDateForWhatsApp(checkout)}`,
+    `Guests: ${guests}`,
+    "",
+    "Please let me know availability. Thank you!",
+  ];
+  const text = encodeURIComponent(lines.join("\n"));
+  return `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${text}`;
+}
