@@ -7,7 +7,10 @@
   const checkoutInput = document.getElementById("checkout");
   const form = document.getElementById("booking-form");
 
-  const TAX_RATE = 0.12;
+  // Indian hotel-tariff GST: 12% for room rates up to ₹7,500/night, 18% above.
+  function gstRateFor(room) {
+    return room.price > 7500 ? 0.18 : 0.12;
+  }
 
   // Populate room dropdown
   roomSelect.innerHTML = ROOMS.map(
@@ -62,7 +65,8 @@
     if (!room) return;
     const nights = nightsBetween();
     const subtotal = room.price * nights;
-    const tax = subtotal * TAX_RATE;
+    const gstRate = gstRateFor(room);
+    const tax = subtotal * gstRate;
     const total = subtotal + tax;
 
     document.getElementById("summary-thumb").className = `summary-thumb ${room.theme}`;
@@ -74,6 +78,7 @@
     document.getElementById("sum-nights").textContent = nights;
     document.getElementById("sum-rate").textContent = `${formatCurrency(room.price)} / night`;
     document.getElementById("sum-subtotal").textContent = formatCurrency(subtotal);
+    document.getElementById("tax-label").textContent = `GST (${Math.round(gstRate * 100)}%)`;
     document.getElementById("sum-tax").textContent = formatCurrency(tax);
     document.getElementById("sum-total").textContent = formatCurrency(total);
   }
@@ -159,7 +164,8 @@
     const room = getRoomById(formData.room);
     const nights = nightsBetween();
     const subtotal = room.price * nights;
-    const tax = subtotal * TAX_RATE;
+    const gstRate = gstRateFor(room);
+    const tax = subtotal * gstRate;
     const total = subtotal + tax;
     const reference = generateReference();
 
@@ -174,7 +180,7 @@
       email: formData.email,
       phone: formData.phone,
       requests: formData.requests || "",
-      total: total.toFixed(2),
+      total: Math.round(total),
       bookedAt: new Date().toISOString(),
     });
 

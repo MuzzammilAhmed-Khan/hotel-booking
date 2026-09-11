@@ -17,7 +17,7 @@ const SITE_CONFIG = {
 
   // Marketing stats shown on the homepage — update freely.
   stats: {
-    totalRooms: "180+",
+    totalRooms: "64",
     guestRating: "4.8/5",
     yearsOpen: "15+",
   },

@@ -4,7 +4,7 @@ const ROOMS = [
     id: "standard-queen",
     name: "Standard Queen Room",
     type: "Standard",
-    price: 89,
+    price: 3499,
     capacity: 2,
     size: 24,
     theme: "grad-1",
@@ -17,7 +17,7 @@ const ROOMS = [
     id: "standard-twin",
     name: "Standard Twin Room",
     type: "Standard",
-    price: 95,
+    price: 3999,
     capacity: 2,
     size: 26,
     theme: "grad-2",
@@ -30,7 +30,7 @@ const ROOMS = [
     id: "deluxe-king",
     name: "Deluxe King Room",
     type: "Deluxe",
-    price: 149,
+    price: 5999,
     capacity: 2,
     size: 34,
     theme: "grad-3",
@@ -43,7 +43,7 @@ const ROOMS = [
     id: "deluxe-family",
     name: "Deluxe Family Room",
     type: "Deluxe",
-    price: 179,
+    price: 7499,
     capacity: 4,
     size: 42,
     theme: "grad-4",
@@ -56,7 +56,7 @@ const ROOMS = [
     id: "junior-suite",
     name: "Junior Suite",
     type: "Suite",
-    price: 229,
+    price: 9999,
     capacity: 3,
     size: 50,
     theme: "grad-5",
@@ -69,7 +69,7 @@ const ROOMS = [
     id: "executive-suite",
     name: "Executive Suite",
     type: "Suite",
-    price: 289,
+    price: 12999,
     capacity: 3,
     size: 58,
     theme: "grad-6",
@@ -82,7 +82,7 @@ const ROOMS = [
     id: "presidential-suite",
     name: "Presidential Suite",
     type: "Suite",
-    price: 459,
+    price: 24999,
     capacity: 4,
     size: 85,
     theme: "grad-7",
@@ -95,7 +95,7 @@ const ROOMS = [
     id: "accessible-room",
     name: "Accessible Queen Room",
     type: "Standard",
-    price: 89,
+    price: 3499,
     capacity: 2,
     size: 28,
     theme: "grad-8",
@@ -107,7 +107,7 @@ const ROOMS = [
 ];
 
 function formatCurrency(amount) {
-  return `$${amount.toFixed(2)}`;
+  return `₹${Math.round(amount).toLocaleString("en-IN")}`;
 }
 
 function getRoomById(id) {
