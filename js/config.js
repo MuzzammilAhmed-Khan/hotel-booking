@@ -10,8 +10,9 @@ const SITE_CONFIG = {
   phone: "+1 (555) 234-5678",
   email: "reservations@alloygrandhotel.example",
 
-  // Digits only, no "+" or spaces — used to build wa.me booking links.
-  whatsappNumber: "917842287755",
+  // Number that "Book Now" buttons message on WhatsApp. Any format works
+  // (with or without "+", spaces, dashes) — just include the country code.
+  whatsappNumber: "+91 78422 87755",
 
   addressShort: "123 Skyline Avenue, Downtown District",
   addressFull: "123 Skyline Avenue, Downtown District, Metro City 10001",

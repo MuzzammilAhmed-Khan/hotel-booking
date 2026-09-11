@@ -23,6 +23,7 @@ Everything editable lives in two files:
 |----------------------------------------|-----------------------|
 | Hotel name / tagline                   | `js/config.js`        |
 | Phone / email                          | `js/config.js`        |
+| WhatsApp number for "Book Now" buttons | `js/config.js` (`whatsappNumber` — any format works) |
 | Address                                | `js/config.js`        |
 | Front desk hours                       | `js/config.js`        |
 | Homepage stats (room count shown, rating, years) | `js/config.js` |

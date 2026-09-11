@@ -141,5 +141,6 @@ function buildWhatsAppLink(room, checkin, checkout, guests) {
     "Please let me know availability. Thank you!",
   ];
   const text = encodeURIComponent(lines.join("\n"));
-  return `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${text}`;
+  const digitsOnly = SITE_CONFIG.whatsappNumber.replace(/\D/g, "");
+  return `https://wa.me/${digitsOnly}?text=${text}`;
 }
