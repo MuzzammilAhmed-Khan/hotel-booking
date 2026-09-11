@@ -1,0 +1,115 @@
+// Shared room inventory used by the home, rooms, and booking pages.
+const ROOMS = [
+  {
+    id: "standard-queen",
+    name: "Standard Queen Room",
+    type: "Standard",
+    price: 89,
+    capacity: 2,
+    size: 24,
+    theme: "grad-1",
+    tagline: "Cozy comfort for the essentials traveler",
+    description:
+      "A bright, efficiently designed room with a plush queen bed, city views, and everything you need for a restful stay.",
+    amenities: ["Free Wi-Fi", "Air Conditioning", "Flat-screen TV", "Work Desk"],
+  },
+  {
+    id: "standard-twin",
+    name: "Standard Twin Room",
+    type: "Standard",
+    price: 95,
+    capacity: 2,
+    size: 26,
+    theme: "grad-2",
+    tagline: "Two beds, twice the flexibility",
+    description:
+      "Ideal for friends or colleagues traveling together, featuring two comfortable twin beds and a walk-in shower.",
+    amenities: ["Free Wi-Fi", "Air Conditioning", "Mini Fridge", "Work Desk"],
+  },
+  {
+    id: "deluxe-king",
+    name: "Deluxe King Room",
+    type: "Deluxe",
+    price: 149,
+    capacity: 2,
+    size: 34,
+    theme: "grad-3",
+    tagline: "Elevated comfort with a view",
+    description:
+      "A spacious king room with a seating area, upgraded bath amenities, and panoramic views of the skyline.",
+    amenities: ["Free Wi-Fi", "Mini Bar", "Bathtub", "Lounge Chair", "Coffee Machine"],
+  },
+  {
+    id: "deluxe-family",
+    name: "Deluxe Family Room",
+    type: "Deluxe",
+    price: 179,
+    capacity: 4,
+    size: 42,
+    theme: "grad-4",
+    tagline: "Room to relax, together",
+    description:
+      "A generous layout with a king bed and a sofa bed, perfect for families who want extra space without compromise.",
+    amenities: ["Free Wi-Fi", "Mini Bar", "Sofa Bed", "Bathtub", "Kids' Amenities"],
+  },
+  {
+    id: "junior-suite",
+    name: "Junior Suite",
+    type: "Suite",
+    price: 229,
+    capacity: 3,
+    size: 50,
+    theme: "grad-5",
+    tagline: "A separate living space, all your own",
+    description:
+      "An open-plan suite with a distinct lounge area, premium linens, and a marble bathroom with a rainfall shower.",
+    amenities: ["Free Wi-Fi", "Lounge Area", "Rainfall Shower", "Nespresso Machine", "Bathrobe & Slippers"],
+  },
+  {
+    id: "executive-suite",
+    name: "Executive Suite",
+    type: "Suite",
+    price: 289,
+    capacity: 3,
+    size: 58,
+    theme: "grad-6",
+    tagline: "Refined space for work and rest",
+    description:
+      "A polished suite with a private study, king bed, and floor-to-ceiling windows overlooking the city lights.",
+    amenities: ["Free Wi-Fi", "Private Study", "Mini Bar", "Bathtub", "Evening Turndown"],
+  },
+  {
+    id: "presidential-suite",
+    name: "Presidential Suite",
+    type: "Suite",
+    price: 459,
+    capacity: 4,
+    size: 85,
+    theme: "grad-7",
+    tagline: "The pinnacle of Alloy Grand hospitality",
+    description:
+      "Our signature suite with a private dining area, spa-inspired bathroom, and dedicated butler service on request.",
+    amenities: ["Free Wi-Fi", "Private Dining", "Jacuzzi", "Butler Service", "Panoramic Terrace"],
+  },
+  {
+    id: "accessible-room",
+    name: "Accessible Queen Room",
+    type: "Standard",
+    price: 89,
+    capacity: 2,
+    size: 28,
+    theme: "grad-8",
+    tagline: "Thoughtfully designed for every guest",
+    description:
+      "A wheelchair-accessible room with a roll-in shower, wider doorways, and all the comforts of our Standard rooms.",
+    amenities: ["Free Wi-Fi", "Roll-in Shower", "Air Conditioning", "Grab Bars"],
+  },
+];
+
+function formatCurrency(amount) {
+  return `$${amount.toFixed(2)}`;
+}
+
+function getRoomById(id) {
+  return ROOMS.find((room) => room.id === id);
+}

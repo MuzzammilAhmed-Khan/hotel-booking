@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us — Alloy Grand Hotel</title>
+<meta name="description" content="Get in touch with Alloy Grand Hotel for reservations, questions, or special requests." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f1b2d%22/><text x=%2250%25%22 y=%2258%25%22 font-size=%2255%22 fill=%22%23c9a15a%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22>A</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="contact">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="brand"><span class="mark">A</span> <span data-cfg="shortName">Alloy Grand</span></a>
+    <ul class="nav-links">
+      <li><a href="/" data-page="home">Home</a></li>
+      <li><a href="rooms" data-page="rooms">Rooms &amp; Suites</a></li>
+      <li><a href="about" data-page="about">About</a></li>
+      <li><a href="contact" data-page="contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="booking" class="btn btn-primary btn-sm">Book Now</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <div class="breadcrumb"><a href="/">Home</a> / Contact</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+      <div>
+        <span class="eyebrow">Contact Info</span>
+        <h2>We're here to help</h2>
+        <ul class="info-list mt-32">
+          <li>
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h4>Address</h4><p data-cfg="addressFull">123 Skyline Avenue, Downtown District, Metro City 10001</p></div>
+          </li>
+          <li>
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.7a2 2 0 0 1-.4 2.2L8 10a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.2-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+            <div><h4>Phone</h4><p data-cfg="phone">+1 (555) 234-5678</p></div>
+          </li>
+          <li>
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4Z"/><path d="m4 6 8 7 8-7"/></svg></div>
+            <div><h4>Email</h4><p data-cfg="email">reservations@alloygrandhotel.example</p></div>
+          </li>
+          <li>
+            <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+            <div><h4>Front Desk Hours</h4><p data-cfg="frontDeskHours">Available 24 hours, every day of the week</p></div>
+          </li>
+        </ul>
+        <div class="map-placeholder">Map preview — <span data-cfg="addressShort">Skyline Avenue, Downtown District</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Send us a message</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="c-name">Full Name</label>
+              <input type="text" id="c-name" name="name" placeholder="Jane Doe" required />
+              <div class="field-error" data-error-for="name"></div>
+            </div>
+            <div class="field">
+              <label for="c-email">Email Address</label>
+              <input type="email" id="c-email" name="email" placeholder="jane@example.com" required />
+              <div class="field-error" data-error-for="email"></div>
+            </div>
+            <div class="field full">
+              <label for="c-subject">Subject</label>
+              <select id="c-subject" name="subject">
+                <option>General Inquiry</option>
+                <option>Reservation Question</option>
+                <option>Group / Event Booking</option>
+                <option>Feedback</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="c-message">Message</label>
+              <textarea id="c-message" name="message" placeholder="How can we help?" required></textarea>
+              <div class="field-error" data-error-for="message"></div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block mt-32">Send Message</button>
+          <p id="contact-success" class="hidden" style="color:var(--success-600); text-align:center; margin-top:16px; font-weight:600;">
+            Thanks! Your message has been sent — we'll reply within 24 hours.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> <span data-cfg="fullName">Alloy Grand Hotel</span>. All rights reserved.</span>
+      <span data-cfg="addressShort">123 Skyline Avenue, Downtown District</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

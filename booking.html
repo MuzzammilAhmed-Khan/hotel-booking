@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book Your Stay — Alloy Grand Hotel</title>
+<meta name="description" content="Complete your reservation at Alloy Grand Hotel — pick your room, dates, and guest details." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f1b2d%22/><text x=%2250%25%22 y=%2258%25%22 font-size=%2255%22 fill=%22%23c9a15a%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22>A</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="booking">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="brand"><span class="mark">A</span> <span data-cfg="shortName">Alloy Grand</span></a>
+    <ul class="nav-links">
+      <li><a href="/" data-page="home">Home</a></li>
+      <li><a href="rooms" data-page="rooms">Rooms &amp; Suites</a></li>
+      <li><a href="about" data-page="about">About</a></li>
+      <li><a href="contact" data-page="contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="booking" class="btn btn-primary btn-sm">Book Now</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Complete Your Booking</h1>
+    <div class="breadcrumb"><a href="/">Home</a> / Book Now</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="booking-layout" id="booking-layout">
+
+      <div class="card" id="form-card">
+        <h3>Reservation Details</h3>
+        <form id="booking-form" novalidate>
+          <div class="form-grid">
+            <div class="field full">
+              <label for="room-select">Room</label>
+              <select id="room-select" name="room" required></select>
+              <div class="field-error" data-error-for="room"></div>
+            </div>
+
+            <div class="field">
+              <label for="checkin">Check-in</label>
+              <input type="date" id="checkin" name="checkin" required />
+              <div class="field-error" data-error-for="checkin"></div>
+            </div>
+            <div class="field">
+              <label for="checkout">Check-out</label>
+              <input type="date" id="checkout" name="checkout" required />
+              <div class="field-error" data-error-for="checkout"></div>
+            </div>
+
+            <div class="field">
+              <label for="guests">Guests</label>
+              <select id="guests" name="guests" required></select>
+              <div class="field-error" data-error-for="guests"></div>
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 555 123 4567" required />
+              <div class="field-error" data-error-for="phone"></div>
+            </div>
+
+            <div class="field">
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" name="fullname" placeholder="Jane Doe" required />
+              <div class="field-error" data-error-for="fullname"></div>
+            </div>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+              <div class="field-error" data-error-for="email"></div>
+            </div>
+
+            <div class="field full">
+              <label for="requests">Special Requests (optional)</label>
+              <textarea id="requests" name="requests" placeholder="Late check-in, high floor, extra pillows..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block mt-32">Confirm Reservation</button>
+        </form>
+      </div>
+
+      <div class="card summary-card" id="summary-card">
+        <h3>Booking Summary</h3>
+        <div class="summary-thumb" id="summary-thumb"></div>
+        <h4 id="summary-room-name">—</h4>
+        <p id="summary-room-tagline" style="color:var(--ink-600); font-size:.9rem; margin-bottom:16px;"></p>
+        <div class="summary-row"><span>Check-in</span><strong id="sum-checkin">—</strong></div>
+        <div class="summary-row"><span>Check-out</span><strong id="sum-checkout">—</strong></div>
+        <div class="summary-row"><span>Guests</span><strong id="sum-guests">—</strong></div>
+        <div class="summary-row"><span>Nights</span><strong id="sum-nights">0</strong></div>
+        <div class="summary-row"><span>Room rate</span><strong id="sum-rate">$0.00 / night</strong></div>
+        <div class="summary-row"><span>Subtotal</span><strong id="sum-subtotal">$0.00</strong></div>
+        <div class="summary-row"><span>Taxes &amp; fees (12%)</span><strong id="sum-tax">$0.00</strong></div>
+        <div class="summary-row total"><span>Total</span><strong id="sum-total">$0.00</strong></div>
+      </div>
+
+      <div class="card confirmation hidden" id="confirmation-card">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h2>Reservation Confirmed!</h2>
+        <p style="color:var(--ink-600);">A confirmation email will be sent to you shortly. Please save your reference number below.</p>
+        <div class="ref" id="conf-ref">AH-000000</div>
+        <div class="confirmation-details" id="conf-details"></div>
+        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <a href="/" class="btn btn-dark">Back to Home</a>
+          <button class="btn btn-outline" id="book-another" style="color:var(--navy-950); border-color:var(--navy-950);">Book Another Room</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> <span data-cfg="fullName">Alloy Grand Hotel</span>. All rights reserved.</span>
+      <span data-cfg="addressShort">123 Skyline Avenue, Downtown District</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/rooms-data.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
