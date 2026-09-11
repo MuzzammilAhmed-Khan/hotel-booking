@@ -5,17 +5,17 @@
 const SITE_CONFIG = {
   shortName: "Alloy Grand",      // shown in the nav bar / footer brand
   fullName: "Alloy Grand Hotel", // shown in headings, titles, copyright
-  tagline: "Boutique hospitality in the heart of downtown. Elegant rooms, warm service, unforgettable stays.",
+  tagline: "Boutique hospitality in the heart of Banjara Hills. Elegant rooms, warm service, unforgettable stays.",
 
-  phone: "+1 (555) 234-5678",
+  phone: "+91 40 2354 6789",
   email: "reservations@alloygrandhotel.example",
 
   // Number that "Book Now" buttons message on WhatsApp. Any format works
   // (with or without "+", spaces, dashes) — just include the country code.
   whatsappNumber: "+91 78422 87755",
 
-  addressShort: "123 Skyline Avenue, Downtown District",
-  addressFull: "123 Skyline Avenue, Downtown District, Metro City 10001",
+  addressShort: "Road No. 12, Banjara Hills, Hyderabad",
+  addressFull: "Road No. 12, Banjara Hills, Hyderabad, Telangana 500034",
 
   frontDeskHours: "Available 24 hours, every day of the week",
 
